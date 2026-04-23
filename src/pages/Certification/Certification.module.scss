@@ -1,0 +1,318 @@
+@import "../../styles/variables";
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: $color-white;
+    max-width: 2560px;
+    margin: 0 auto;
+    font-family: $font-family-main;
+}
+
+.mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.centeredContainer {
+    width: 1172px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.sectionDesc {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 900px;
+    color: #4A4A4A;
+}
+
+.heroSection {
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    .heroOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(16, 73, 85, 0.9) 0%, rgba(16, 73, 85, 0.15) 100%);
+        display: flex;
+        align-items: center;
+    }
+
+    .heroContainer {
+        width: 1172px;
+        margin: 0 auto;
+        color: $color-white;
+        text-align: left;
+    }
+
+    .heroTitle {
+        font-size: 64px;
+        width: 600px;
+        margin-bottom: 20px;
+        margin-top: 0;
+        letter-spacing: -2px;
+        -webkit-text-stroke: 0.5px;
+    }
+}
+
+.welcomeSection {
+    padding: 100px 0;
+
+    .centeredContainer {
+        width: 1172px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .welcomeTextWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        max-width: 1020px;
+        width: 100%;
+    }
+
+    .breadcrumb {
+        font-size: 14px;
+        color: $color-charcoal;
+        margin-bottom: 40px;
+
+        .linkHome {
+            color: $color-charcoal;
+            text-decoration: none;
+            transition: color 0.2s ease;
+
+            &:visited {
+                color: $color-charcoal;
+            }
+
+            &:hover {
+                color: $color-teal;
+            }
+        }
+
+        .linkSeparator {
+            margin: 0 5px;
+            color: $color-charcoal;
+        }
+
+        .linkActive {
+            color: #9B9B9B;
+        }
+    }
+
+    .accentBar {
+        width: 53px;
+        height: 9px;
+        margin-bottom: 30px;
+    }
+
+    .sectionTitleLeft {
+        font-size: 53px;
+        margin-bottom: 25px;
+        letter-spacing: -0.5px;
+        color: $color-charcoal;
+        margin-top: 0;
+        -webkit-text-stroke: 1px;
+    }
+
+    .welcomeDesc {
+        font-size: 18px;
+        line-height: 1.7;
+        color: #4A4A4A;
+        text-align: justify;
+        max-width: 900px;
+    }
+}
+
+.categorySection {
+    padding: 60px 0 100px 0;
+    background-color: #F0F0F0;
+
+    .categoryTitle {
+        font-size: 42px;
+        line-height: 49px;
+        color: $color-charcoal;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-text-stroke: 1px;
+    }
+
+    .categoryGrid {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-wrap: wrap;
+        padding-bottom: 30px;
+        gap: 30px;
+        row-gap: 80px;
+        margin-top: 60px;
+        width: 100%;
+
+        .catCard {
+            width: 370px;
+            font-size: 22px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            cursor: pointer;
+            -webkit-text-stroke: 0.7px;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            .catIcon {
+                width: 91px;
+                height: 91px;
+                margin-bottom: 30px;
+            }
+
+            .cardLabel {
+                font-size: 24px;
+                color: $color-charcoal;
+                margin-bottom: 20px;
+            }
+
+            .catUnderline {
+                height: 12px;
+                width: 370px;
+                background-color: $color-teal;
+                margin-top: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .heroSection {
+        height: 200px;
+        padding: 0;
+
+        .heroOverlay {
+            background: linear-gradient(to right, rgba(16, 73, 85, 0.9) 0%, rgba(16, 73, 85, 0.15) 100%);
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+        }
+
+        .heroTitle {
+            font-size: 28px;
+            width: 100%;
+            letter-spacing: -1px;
+            margin: 0;
+            -webkit-text-stroke: 1px currentColor;
+        }
+    }
+
+    .welcomeSection {
+        padding: 40px 0;
+
+        .centeredContainer {
+            width: 100%;
+            padding: 0 24px;
+        }
+
+        .welcomeTextWrapper {
+            max-width: 335px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            display: none;
+        }
+
+        .accentBar {
+            width: 53px;
+            height: 9px;
+            margin-bottom: 20px;
+        }
+
+        .sectionTitleLeft {
+            font-size: 28px;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .welcomeDesc {
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: left;
+        }
+    }
+
+    .categorySection {
+        padding: 60px 0;
+
+        .centeredContainer {
+            width: 100%;
+            padding: 0 24px;
+        }
+
+        .categoryTitle {
+            font-size: 28px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .sectionDesc {
+            font-size: 14px;
+            margin-bottom: 0;
+
+            br {
+                display: none;
+            }
+        }
+
+        .categoryGrid {
+            flex-direction: column;
+            gap: 0;
+            row-gap: 40px;
+            margin-top: 40px;
+            max-width: 335px;
+            margin-left: auto;
+            margin-right: auto;
+
+            .catCard {
+                width: 100%;
+                font-size: 16px;
+
+                .catIcon {
+                    width: 87.921px;
+                    height: 80px;
+                    margin-bottom: 20px;
+                }
+
+                .cardLabel {
+                    font-size: 16px;
+                    margin-bottom: 30px;
+                }
+
+                .catUnderline {
+                    width: 100%;
+                    height: 8px;
+                }
+            }
+        }
+    }
+}

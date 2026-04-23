@@ -1,0 +1,359 @@
+@import "../../styles/variables";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $color-white;
+  max-width: 2560px;
+  margin: 0 auto;
+  font-family: $font-family-main;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 120px;
+}
+
+.createBlock {
+  width: 571px;
+  max-width: 100%;
+  padding: 0 24px;
+  margin-top: 60px;
+
+  .backLink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: $color-charcoal;
+    text-decoration: none;
+    margin-bottom: 40px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+
+    &:hover {
+      text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  .accentContainer {
+    margin-bottom: 20px;
+
+    .accentBarAsset {
+      width: 53px;
+      height: 9px;
+    }
+  }
+
+  .pageTitle {
+    font-size: 50px;
+    font-weight: 900;
+    -webkit-text-stroke: 1.5px currentColor;
+    color: $color-charcoal;
+    margin-bottom: 40px;
+    margin-top: 0;
+    letter-spacing: -1.5px;
+  }
+}
+
+.createForm {
+  .inputGroup {
+    margin-bottom: 30px;
+
+    label {
+      display: block;
+      font-size: 18px;
+      font-weight: 700;
+      color: $color-charcoal;
+      margin-bottom: 4px;
+    }
+
+    input,
+    .deptDropdown {
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid $color-charcoal;
+      font-size: 18px;
+      font-family: inherit;
+      color: $color-charcoal;
+      background: transparent;
+      padding-bottom: 2px;
+
+      &:focus {
+        outline: none;
+        border-color: $color-teal;
+      }
+    }
+
+    .deptDropdown {
+      cursor: pointer;
+      position: relative;
+    }
+  }
+
+  .passwordCriteria {
+    margin-bottom: 40px;
+
+    .criteriaTitle {
+      font-size: 16px;
+      font-weight: 700;
+      color: $color-charcoal;
+      margin-bottom: 15px;
+    }
+
+    .criteriaGrid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 15px;
+
+      .criterion {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        color: $color-charcoal;
+
+        .checkIcon {
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          border: 1.5px solid #D5D5D5;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &.valid {
+            border-color: $color-teal;
+            background-color: $color-teal;
+
+            &::after {
+              content: "✓";
+              color: white;
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .recaptchaPlaceholder {
+    --captcha-width: 300px;
+    margin-bottom: 40px;
+    width: var(--captcha-width);
+    position: relative;
+
+    .captchaLogo {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      display: block;
+    }
+
+    .spinner {
+      position: absolute;
+      left: 9%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: clamp(16px, calc(var(--captcha-width) * 0.09), 28px);
+      aspect-ratio: 1;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #2B73EB;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    .verifiedTick {
+      position: absolute;
+      left: 9%;
+      top: 50%;
+      transform: translateY(-50%);
+
+      svg {
+        width: clamp(16px, calc(var(--captcha-width) * 0.09), 28px);
+        height: clamp(16px, calc(var(--captcha-width) * 0.09), 28px);
+      }
+    }
+
+    &.verified {
+      cursor: default;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: translateY(-50%) rotate(0deg);
+    }
+
+    100% {
+      transform: translateY(-50%) rotate(360deg);
+    }
+  }
+
+  .passwordInputWrapper {
+    position: relative;
+
+    .eyeButton {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 5px;
+
+      .eyeIcon {
+        width: 24px;
+        height: auto;
+      }
+    }
+  }
+
+  .loginPrompt {
+    margin-top: 30px;
+    font-size: 15px;
+    color: $color-charcoal;
+    text-align: left;
+
+    a {
+      color: $color-charcoal;
+      text-decoration: underline;
+      font-weight: 400;
+      transition: all 0.2s ease;
+      display: inline-block;
+
+      &:hover {
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
+
+  .errorMessage {
+    color: #f10101;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 5px;
+
+    &.submitErrorMessage {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  .formDivider {
+    border: none;
+    border-top: 1px solid #2E2E2E;
+    margin: 30px 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .main {
+    padding-bottom: 60px;
+  }
+
+  .createBlock {
+    width: 100%;
+    margin-top: 30px;
+
+    .backLink {
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+
+    .accentContainer {
+      margin-bottom: 16px;
+
+      .accentBarAsset {
+        width: 38px;
+        height: 6.5px;
+      }
+    }
+
+    .pageTitle {
+      font-size: 32px;
+      -webkit-text-stroke: 1px currentColor;
+      line-height: 1.2;
+      margin-bottom: 30px;
+      white-space: normal;
+    }
+  }
+
+  .createForm {
+    .inputGroup {
+      margin-bottom: 30px;
+
+      label {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+
+      input,
+      .deptDropdown {
+        font-size: 16px;
+        padding-bottom: 6px;
+      }
+    }
+
+    .passwordCriteria {
+      margin-bottom: 30px;
+
+      .criteriaTitle {
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+
+      .criteriaGrid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px 10px;
+
+        .criterion {
+          font-size: 10px;
+          gap: 6px;
+          align-items: flex-start;
+
+          .checkIcon {
+            width: 14px;
+            height: 14px;
+            margin-top: 1px;
+            flex-shrink: 0;
+
+            &.valid::after {
+              font-size: 8px;
+            }
+          }
+        }
+      }
+    }
+
+    .recaptchaPlaceholder {
+      --captcha-width: 100%;
+      max-width: 327px;
+      margin-bottom: 30px;
+    }
+
+    .formDivider {
+      margin: 25px 0;
+    }
+
+    .loginPrompt {
+      font-size: 14px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+  }
+}

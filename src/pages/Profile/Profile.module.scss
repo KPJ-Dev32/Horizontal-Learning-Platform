@@ -1,0 +1,248 @@
+@import "../../styles/variables";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $color-white;
+  max-width: 2560px;
+  margin: 0 auto;
+  font-family: $font-family-main;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 200px;
+  width: 100%;
+}
+
+.profileContainer {
+  width: 1172px;
+  margin: 0 auto;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileContentWrapper {
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.editProfileContainer {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.editProfileBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  color: $color-charcoal;
+  cursor: pointer;
+  padding-bottom: 6px;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  .pencilIcon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.lineWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.accentContainer {
+  margin-bottom: 25px;
+
+  .accentBarAsset {
+    width: 53px;
+    height: 9px;
+  }
+}
+
+.pageTitle {
+  font-size: 50px;
+  font-weight: 900;
+  -webkit-text-stroke: 1px currentColor;
+  color: $color-charcoal;
+  margin-top: 0;
+  margin-bottom: 40px;
+  letter-spacing: -1.5px;
+}
+
+.sectionsWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.section {
+  width: 100%;
+
+  .sectionTitle {
+    font-size: 26px;
+    font-weight: 900;
+    -webkit-text-stroke: 0.7px currentColor;
+    color: $color-charcoal;
+    margin-bottom: 30px;
+    border-bottom: 2px solid $color-charcoal;
+    padding-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+}
+
+.infoRow {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 25px;
+
+  .infoLabel {
+    width: 160px;
+    font-size: 16px;
+    font-weight: 700;
+    color: $color-charcoal;
+    padding-bottom: 8px;
+    flex-shrink: 0;
+  }
+
+  .infoValueWrapper {
+    flex: 1;
+    border-bottom: 1px solid #D8D8D8;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .infoValue {
+    font-size: 16px;
+    color: #555;
+  }
+
+  .changeBtn {
+    font-size: 14px;
+    font-weight: 800;
+    color: $color-charcoal;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $color-teal;
+    }
+  }
+}
+
+.certEntry {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  gap: 4px;
+}
+
+.certName {
+  font-size: 18px;
+  font-weight: 700;
+  color: $color-charcoal;
+  margin: 0;
+}
+
+.certDateBadge {
+  font-size: 14px;
+  color: #767676;
+  font-weight: 400;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .profileContainer {
+    width: 100%;
+    margin-top: 40px;
+    padding: 0 24px;
+  }
+
+  .profileContentWrapper {
+    width: 335px;
+    max-width: 100%;
+    margin: 0 auto;
+    align-items: flex-start;
+  }
+
+  .editProfileContainer {
+    margin-bottom: 25px;
+  }
+
+  .accentContainer {
+    margin-bottom: 20px;
+  }
+
+  .pageTitle {
+    font-size: 28px;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+    -webkit-text-stroke: 1px currentColor;
+  }
+
+  .sectionsWrapper {
+    gap: 40px;
+  }
+
+  .section {
+    .sectionTitle {
+      font-size: 22px;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+    }
+  }
+
+  .infoRow {
+    margin-bottom: 20px;
+
+    .infoLabel {
+      width: 130px;
+      font-size: 14px;
+      padding-bottom: 4px;
+    }
+
+    .infoValueWrapper {
+      padding-bottom: 4px;
+    }
+
+    .infoValue {
+      font-size: 14px;
+    }
+
+    .changeBtn {
+      font-size: 13px;
+    }
+  }
+
+  .certEntry {
+    margin-bottom: 15px;
+  }
+
+  .certName {
+    font-size: 16px;
+  }
+}

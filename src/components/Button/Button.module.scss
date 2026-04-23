@@ -1,0 +1,36 @@
+@import "../../styles/variables";
+
+.btn {
+  width: 100%;
+  background-color: $color-teal;
+  color: $color-charcoal;
+  border: none;
+  padding: 18px;
+  font-size: 14px;
+  font-weight: 900;
+  -webkit-text-stroke: 0.5px currentColor;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: background-color 0.3s;
+  font-family: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: darken($color-teal, 5%);
+  }
+
+  &:disabled {
+    background-color: lighten($color-charcoal, 20%);
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .btn {
+    height: 44px;
+    padding: 0;
+  }
+}

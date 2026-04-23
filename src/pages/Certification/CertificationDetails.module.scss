@@ -1,0 +1,358 @@
+@import "../../styles/variables";
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: $color-white;
+    font-family: $font-family-main;
+}
+
+.mainContent {
+    flex: 1;
+    padding: 60px 0 100px 0;
+}
+
+.centeredContainer {
+    width: 1172px;
+    margin: 0 auto;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: $color-charcoal;
+    margin-bottom: 40px;
+
+    .linkHome {
+        color: $color-charcoal;
+        text-decoration: none;
+
+        &:hover {
+            color: $color-teal;
+        }
+    }
+
+    .linkSeparator {
+        margin: 0 5px;
+    }
+
+    .linkActive {
+        color: #9B9B9B;
+    }
+}
+
+.pageTitle {
+    font-size: 42px;
+    color: #333;
+    margin-bottom: 50px;
+    letter-spacing: -0.5px;
+    -webkit-text-stroke: 1px;
+}
+
+.section {
+    margin-bottom: 50px;
+}
+
+.sectionHeading {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+    -webkit-text-stroke: 1px;
+}
+
+.bodyText {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #4A4A4A;
+}
+
+.bannerContainer {
+    width: 100%;
+    margin-bottom: 50px;
+
+    .bannerImage {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+}
+
+.objectivesList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.objectiveItem {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #4A4A4A;
+    line-height: 1.5;
+
+    .bulletIcon {
+        width: 12px;
+        height: 12px;
+        margin-right: 15px;
+        margin-top: 8px;
+    }
+}
+
+.videoWrapper {
+    width: 100%;
+    position: relative;
+    margin-bottom: 60px;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .videoThumb {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .playButton {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        width: 120px;
+        height: 120px;
+        transition: transform 0.2s ease;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        &:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+    }
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #BCBCBC;
+    margin: 60px 0;
+}
+
+.blockTitle {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: 700;
+    -webkit-text-stroke: 1px;
+}
+
+.relatedSection {
+    margin-bottom: 100px;
+}
+
+.certsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.certCard {
+    display: flex;
+    flex-direction: column;
+
+    .cardImgWrapper {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 25px;
+        overflow: hidden;
+        border-radius: 4px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .cardTitle {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 15px;
+        font-weight: 700;
+        -webkit-text-stroke: 0.5px;
+    }
+
+    .cardDesc {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 25px;
+        flex: 1;
+    }
+
+    .cardBtn {
+        align-self: flex-start;
+        padding: 10px 25px;
+        font-size: 14px;
+        width: 169px;
+    }
+}
+
+.employeeSection {
+    margin-bottom: 60px;
+}
+
+.employeeGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 290px);
+    justify-content: space-between;
+    row-gap: 50px;
+}
+
+.employeeCard {
+    .empName {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+    .empInfo {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 5px;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .wrapper {
+        overflow-x: hidden;
+    }
+
+    .mainContent {
+        padding: 40px 0;
+    }
+
+    .centeredContainer {
+        width: 100%;
+        padding: 0 24px;
+    }
+
+    .breadcrumb {
+        display: none;
+    }
+
+    .pageTitle {
+        font-size: 28px;
+        margin-bottom: 30px;
+        -webkit-text-stroke: 1px currentColor;
+    }
+
+    .section {
+        margin-bottom: 35px;
+    }
+
+    .sectionHeading {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .bodyText {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .bannerContainer {
+        margin-bottom: 35px;
+    }
+
+    .objectivesList {
+        margin-top: 15px;
+    }
+
+    .objectiveItem {
+        font-size: 14px;
+        margin-bottom: 12px;
+
+        .bulletIcon {
+            width: 10px;
+            height: 10px;
+            margin-right: 12px;
+            margin-top: 5px;
+        }
+    }
+
+    .videoWrapper {
+        margin-bottom: 40px;
+
+        .playButton {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    .divider {
+        margin: 40px 0;
+    }
+
+    .blockTitle {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .certsGrid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .certCard {
+        .cardImgWrapper {
+            height: auto;
+            aspect-ratio: 16 / 9;
+            margin-bottom: 15px;
+        }
+
+        .cardTitle {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .cardDesc {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .cardBtn {
+            width: 100%;
+            max-width: 335px;
+            height: 44px;
+            margin: 0 auto;
+        }
+    }
+
+    .employeeSection {
+        margin-bottom: 40px;
+    }
+
+    .employeeGrid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .employeeCard {
+        .empName {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .empInfo {
+            font-size: 14px;
+        }
+    }
+}

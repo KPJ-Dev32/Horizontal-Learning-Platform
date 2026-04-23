@@ -1,0 +1,707 @@
+@import "../../styles/variables";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $color-white;
+  max-width: 2560px;
+  margin: 0 auto;
+  font-family: $font-family-main;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.centeredContainer {
+  width: 1172px;
+  max-width: 100%;
+  padding: 0 24px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sectionTitle,
+.sectionTitleWhite {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  letter-spacing: -0.5px;
+}
+
+.sectionTitle {
+  color: $color-charcoal;
+  -webkit-text-stroke: 1px $color-charcoal;
+}
+
+.sectionTitleWhite {
+  color: $color-white;
+  text-align: left;
+  -webkit-text-stroke: 1px $color-white;
+}
+
+.sectionDesc,
+.sectionDescWhite {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 900px;
+}
+
+.sectionDesc {
+  color: #4A4A4A;
+}
+
+.sectionDescWhite {
+  color: $color-white;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.heroSection {
+  width: 100%;
+  height: 450px;
+  background-image: url('../../assets/Hero Image.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  .heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(16, 73, 85, 0.9) 0%, rgba(16, 73, 85, 0.15) 100%);
+    display: flex;
+    align-items: center;
+  }
+
+  .heroContainer {
+    width: 1172px;
+    max-width: 100%;
+    padding: 0 24px;
+    margin: 0 auto;
+    color: $color-white;
+    text-align: left;
+  }
+
+  .heroTitle {
+    font-size: 64px;
+    width: 600px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    margin-top: 0;
+    letter-spacing: -2px;
+    -webkit-text-stroke: 0.5px $color-white;
+  }
+
+  .heroText {
+    font-size: 18px;
+    max-width: 550px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+
+  .heroBtn {
+    width: 171px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    padding: 0;
+    margin-bottom: 0;
+  }
+}
+
+.welcomeSection {
+  padding: 100px 0;
+
+  .centeredContainer {
+    width: 1172px;
+    max-width: 100%;
+    padding: 0 24px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .welcomeTextWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 1020px;
+  }
+
+  .accentBar {
+    width: 53px;
+    height: 9px;
+    margin-bottom: 30px;
+  }
+
+  .sectionTitleLeft {
+    font-size: 53px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+    color: $color-charcoal;
+    margin-top: 0;
+    -webkit-text-stroke: 1.5px $color-charcoal;
+  }
+
+  .welcomeDesc {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #4A4A4A;
+    text-align: justify;
+    max-width: 900px;
+  }
+}
+
+.exploreSection {
+  height: 607px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #F8F8F8;
+
+  .exploreGrid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    width: 100%;
+
+    .exploreCard {
+      background-color: $color-white;
+      width: 370px;
+      height: 253px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      -webkit-text-stroke: 0.7px $color-charcoal;
+      transition: transform 0.15s, background-color 0.15s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #70A29C;
+        transform: translateY(-5px);
+      }
+
+      &.selected {
+        background-color: #70A29C;
+
+        .cardLabel {
+          color: $color-white;
+          border: none;
+        }
+
+        .cardIcon {
+          filter: brightness(0) invert(1);
+        }
+      }
+
+      .cardIcon {
+        width: 112px;
+        height: 112px;
+        margin-bottom: 25px;
+        transition: filter 0.3s ease;
+      }
+
+      .cardLabel {
+        font-size: 24px;
+        font-style: bold;
+        color: $color-charcoal;
+        margin: 0;
+        transition: color 0.3s ease;
+      }
+    }
+  }
+}
+
+.featuredSection {
+  background-color: $color-charcoal;
+  height: 909px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .centerTitleWhite {
+    font-size: 53px;
+    font-weight: bold;
+    color: $color-white;
+    text-align: center;
+    margin-bottom: 80px;
+    margin-top: 0px;
+    letter-spacing: -1.5px;
+    -webkit-text-stroke: 0.5px $color-white;
+  }
+
+  .featuredFlex {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 80px;
+    width: 100%;
+
+    .featuredContent {
+      flex: 1;
+      text-align: left;
+    }
+
+    .featuredGrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+
+      .featuredCard {
+        background-color: $color-white;
+        width: 270px;
+        height: 253px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        -webkit-text-stroke: 0.7px $color-charcoal;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        .certIcon {
+          width: 85px;
+          height: 95px;
+          margin-bottom: 20px;
+        }
+
+        .cardLabelFeat {
+          font-size: 24px;
+          font-weight: bold;
+          color: $color-charcoal;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .featuredBtnWrapper {
+    .featuredBtn {
+      width: 171px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      padding: 0;
+    }
+  }
+}
+
+.sectionDescWhite {
+  font-size: 22px;
+}
+
+.categorySection {
+  padding: 100px 0;
+  background-color: $color-white;
+
+  .categoryTitle {
+    width: 315px;
+    height: 49px;
+    font-size: 40px;
+    line-height: 49px;
+    font-weight: bold;
+    color: $color-charcoal;
+    -webkit-text-stroke: 1px $color-charcoal;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .categoryGrid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    margin-top: 60px;
+    width: 100%;
+
+    .catCard {
+      width: 370px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      .catIcon {
+        width: 91px;
+        height: 91px;
+        margin-bottom: 30px;
+      }
+
+      .cardLabel {
+        font-size: 22px;
+        font-weight: bold;
+        color: $color-charcoal;
+        margin-bottom: 20px;
+        -webkit-text-stroke: 0.7px $color-charcoal;
+      }
+
+      .catUnderline {
+        height: 12px;
+        width: 100%;
+        background-color: $color-teal;
+        margin-top: auto;
+      }
+    }
+  }
+}
+
+.certListSection {
+  height: 790px;
+  background-color: #f0f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .sectionTitle {
+    font-size: 45px;
+  }
+
+  .sectionDesc {
+    font-size: 19px;
+  }
+
+  .certEightGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+    width: 100%;
+
+    .smallCertCard {
+      background-color: $color-white;
+      width: 270px;
+      height: 170px;
+      padding: 0 20px;
+      font-size: 20px;
+      line-height: 1.4;
+      color: $color-charcoal;
+      font-weight: bold;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+
+  .sectionTitle,
+  .sectionTitleWhite {
+    font-size: 26px;
+    white-space: normal;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+
+  .categorySection .categoryTitle {
+    font-size: 26px;
+    white-space: normal;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+
+  .welcomeSection .sectionTitleLeft {
+    font-size: 28px;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    white-space: normal;
+    -webkit-text-stroke: 1px $color-charcoal;
+  }
+
+  .sectionDesc,
+  .sectionDescWhite {
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .welcomeSection .welcomeDesc {
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .heroSection {
+    width: 100%;
+    height: auto;
+    min-height: 250px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+
+    .heroOverlay {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      background: linear-gradient(to right, rgba(16, 73, 85, 0.9) 0%, rgba(16, 73, 85, 0.15) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .heroContainer {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .heroTitle {
+      font-size: 30px;
+      width: 100%;
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+      margin-top: 0;
+      line-height: 1.1;
+    }
+
+    .heroText {
+      font-size: 12px;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    .heroBtn {
+      width: 140px;
+      height: 36px;
+      font-size: 14px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .welcomeSection {
+    padding: 60px 0;
+
+    .welcomeTextWrapper {
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    .accentBar {
+      margin-bottom: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .exploreSection {
+    height: auto;
+    padding: 60px 0;
+
+    .exploreGrid {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+
+      .exploreCard {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        padding: 30px 20px;
+        flex-direction: column;
+        justify-content: center;
+
+        .cardIcon {
+          width: 78.68px;
+          height: 80px;
+          margin-bottom: 10px;
+        }
+
+        .cardLabel {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .featuredSection {
+    height: auto;
+    padding: 60px 0;
+
+    .centerTitleWhite {
+      font-size: 26px;
+      margin-bottom: 20px;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .featuredFlex {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .featuredContent {
+        display: contents;
+
+        .sectionDescWhite {
+          order: 1;
+          text-align: center;
+          font-size: 14px;
+          line-height: 1.5;
+          margin-bottom: 20px;
+        }
+      }
+
+      .featuredGrid {
+        order: 2;
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 15px;
+        justify-items: center;
+
+        .featuredCard {
+          width: 100%;
+          max-width: 400px;
+          height: auto;
+          padding: 30px 20px;
+
+          .certIcon {
+            width: 68.687px;
+            height: 80px;
+            margin-bottom: 15px;
+          }
+
+          .cardLabelFeat {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    .featuredBtnWrapper {
+      order: 3;
+      width: 100%;
+
+      .featuredBtn {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .categorySection {
+    padding: 60px 0;
+
+    .categoryGrid {
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 30px;
+      align-items: center;
+
+      .catCard {
+        width: 100%;
+        height: auto;
+
+        .catIcon {
+          width: 87.921px;
+          height: 80px;
+          margin-bottom: 15px;
+        }
+
+        .cardLabel {
+          font-size: 16px;
+          margin-bottom: 15px;
+        }
+
+        .catUnderline {
+          width: 100%;
+          max-width: 400px;
+          height: 8px;
+          margin: 15px auto 0;
+        }
+      }
+    }
+  }
+
+  .certListSection {
+    height: auto;
+    padding: 60px 0;
+
+    .sectionTitle {
+      font-size: 26px;
+      white-space: normal;
+      text-align: center;
+      width: 100%;
+      height: auto;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .sectionDesc {
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .certEightGrid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin-top: 30px;
+      justify-items: center;
+
+      .smallCertCard {
+        width: 100%;
+        max-width: 400px;
+        height: 94px;
+        font-size: 14px;
+        padding: 0 15px;
+      }
+    }
+  }
+}

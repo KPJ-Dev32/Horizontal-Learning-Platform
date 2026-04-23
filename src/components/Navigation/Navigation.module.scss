@@ -1,0 +1,47 @@
+@import "../../styles/variables";
+
+.nav {
+  background-color: $color-charcoal;
+  color: $color-white;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .navContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+  -webkit-text-stroke: 1.5px currentColor;
+      text-transform: uppercase;
+    }
+
+    .menu {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+
+      li a {
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $color-teal;
+        }
+      }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      .menu {
+        display: none; // Normally we'd have a hamburger menu
+      }
+    }
+  }
+}

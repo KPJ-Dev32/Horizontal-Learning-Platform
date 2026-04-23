@@ -1,0 +1,85 @@
+@import "../../styles/variables";
+
+.container {
+  max-width: 1172px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  background-color: $color-charcoal;
+  color: $color-white;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .logoWrapper {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+      filter: brightness(1.2);
+      transform: translateY(-2px);
+    }
+
+    .hLogo {
+      height: 80px;
+      width: auto;
+    }
+  }
+
+  .loginAction {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+    font-weight: 900;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+
+    &:hover {
+      filter: brightness(1.2);
+      transform: translateY(-2px);
+    }
+
+    .uIcon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .header {
+    height: 60px;
+  }
+
+  .container {
+    width: 375px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .header .logoWrapper .hLogo {
+    height: 32px;
+  }
+
+  .header .loginAction {
+    font-size: 15px;
+    gap: 8px;
+
+    .uIcon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
