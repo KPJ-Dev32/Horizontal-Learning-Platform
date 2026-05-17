@@ -24,7 +24,8 @@ try {
       password: process.env.PGPASSWORD || 'postgres',
       host: process.env.PGHOST || 'localhost',
       port: Number(process.env.PGPORT) || 5432,
-      database: process.env.PGDATABASE || 'horizontal_learning'
+      database: process.env.PGDATABASE || 'horizontal_learning',
+      ssl: { rejectUnauthorized: false }
     });
   }
 } catch (error) {
