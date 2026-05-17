@@ -27,7 +27,7 @@ const ChangePasswordModal = ({ isOpen, onClose, currentUser }) => {
         try {
           captchaRef.current.innerHTML = '';
           window.grecaptcha.render(captchaRef.current, {
-            sitekey: '6LeIxAcTAAAAAJcZVRqyhH71UMIEGNQ_MXjiZKhI',
+            sitekey: '6LcfXO8sAAAAACO-S_65O5DYbavZMUKM99j1NUWA',
             callback: () => {
               setIsVerified(true);
             },
