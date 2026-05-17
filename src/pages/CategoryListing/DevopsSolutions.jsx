@@ -67,7 +67,7 @@ const DevopsSolutions = () => {
               {paginatedCourses.map((course, i) => (
                 <li key={course.id} className={styles.courseItem}>
                   <div className={styles.courseInfo}><h3 className={styles.courseTitle}>{course.title}</h3><p className={styles.courseDesc}>{course.desc}</p></div>
-                  <div className={styles.courseMeta}><span className={styles.courseDuration}>Duration - {course.duration}</span><Button className={styles.learnMoreBtn} onClick={() => navigate('/404')}>Learn more</Button></div>
+                  <div className={styles.courseMeta}><span className={styles.courseDuration}>Duration - {course.duration}</span><Button className={styles.learnMoreBtn} onClick={() => navigate(`/course-details?id=devops-pipeline&title=${encodeURIComponent(course.title)}`)}>Learn more</Button></div>
                   {i < paginatedCourses.length - 1 && <hr className={styles.itemDivider} />}
                 </li>
               ))}

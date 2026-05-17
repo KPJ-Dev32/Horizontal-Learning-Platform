@@ -22,6 +22,8 @@ import BackendSolutions from './pages/CategoryListing/BackendSolutions'
 import DevopsSolutions from './pages/CategoryListing/DevopsSolutions'
 import QASolutions from './pages/CategoryListing/QASolutions'
 import DesignSolutions from './pages/CategoryListing/DesignSolutions'
+import GrowthHub from './pages/GrowthHub/GrowthHub'
+import ExamCenter from './pages/ExamCenter/ExamCenter'
 
 function App() {
   return (
@@ -49,6 +51,8 @@ function App() {
         <Route path="/devops-solutions" element={<DevopsSolutions />} />
         <Route path="/qa-solutions" element={<QASolutions />} />
         <Route path="/design-solutions" element={<DesignSolutions />} />
+        <Route path="/growth-hub" element={<GrowthHub />} />
+        <Route path="/exams" element={<ExamCenter />} />
         <Route path="/404" element={<ErrorPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

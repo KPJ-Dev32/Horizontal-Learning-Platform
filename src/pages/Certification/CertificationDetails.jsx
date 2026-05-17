@@ -93,6 +93,16 @@ const CertificationDetails = () => {
                         </ul>
                     </section>
 
+                    <div className={styles.ctaBox} style={{ margin: '45px 0', padding: '30px', background: '#F8FAFC', border: '1px solid #ECECEC', borderRadius: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
+                        <div>
+                            <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: '#2F2D2E', marginBottom: '8px', fontFamily: 'inherit' }}>Ready to validate your Sitecore Hub expertise?</h3>
+                            <p style={{ fontSize: '14px', color: '#6F6D6E', margin: 0 }}>Take the Sitecore Professional Certification Exam and earn your horizontal credentials.</p>
+                        </div>
+                        <Button onClick={() => navigate('/exams?cert=sitecore')} style={{ padding: '14px 28px', backgroundColor: '#D97706', borderColor: '#D97706', color: '#FFF', fontWeight: 'bold' }}>
+                            Take Certification Exam
+                        </Button>
+                    </div>
+
                     <div className={styles.videoWrapper}>
                         <img src={videoThumbnail} alt="Video Thumbnail" className={styles.videoThumb} />
                         <button className={styles.playButton}>

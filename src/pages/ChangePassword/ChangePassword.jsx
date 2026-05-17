@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AppHeader from '../../components/AppHeader/AppHeader';
 import AppFooter from '../../components/AppFooter/AppFooter';
 import Button from '../../components/Button/Button';
 import styles from './ChangePassword.module.scss';
 import eyeIcon from '../../assets/Combined Shape Copy 3.svg';
-import captchaLogo from '../../assets/Captcha Image.png';
 import accentBar from '../../assets/Rectangle 3 Copy 4.svg';
 
 const ChangePassword = () => {
@@ -35,9 +34,52 @@ const ChangePassword = () => {
   const [showConfirm, setShowConfirm] = useState(false);
   
   const [isVerified, setIsVerified] = useState(false);
-  const [isVerifying, setIsVerifying] = useState(false);
+  const captchaRef = useRef(null);
   const [errorMsg, setErrorMsg] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
+
+  useEffect(() => {
+    let active = true;
+    const renderCaptcha = () => {
+      if (window.grecaptcha && captchaRef.current && active) {
+        try {
+          captchaRef.current.innerHTML = '';
+          window.grecaptcha.render(captchaRef.current, {
+            sitekey: '6LeIxAcTAAAAAJcZVRqyhH71UMIEGNQ_MXjiZKhI',
+            callback: () => {
+              setIsVerified(true);
+            },
+            'expired-callback': () => {
+              setIsVerified(false);
+            },
+            'error-callback': () => {
+              setIsVerified(false);
+            }
+          });
+        } catch (e) {
+          console.warn("reCAPTCHA rendering error:", e);
+        }
+      }
+    };
+
+    if (window.grecaptcha) {
+      renderCaptcha();
+    } else {
+      const interval = setInterval(() => {
+        if (window.grecaptcha) {
+          renderCaptcha();
+          clearInterval(interval);
+        }
+      }, 100);
+      return () => {
+        active = false;
+        clearInterval(interval);
+      };
+    }
+    return () => {
+      active = false;
+    };
+  }, []);
 
   if (!currentUser) return null;
 
@@ -46,15 +88,6 @@ const ChangePassword = () => {
     setErrorMsg('');
     setSuccessMsg('');
     setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleCaptchaClick = () => {
-    if (isVerified || isVerifying) return;
-    setIsVerifying(true);
-    setTimeout(() => {
-      setIsVerifying(false);
-      setIsVerified(true);
-    }, 1000);
   };
 
   const hasMinChars = formData.newPassword.length >= 10;
@@ -204,17 +237,7 @@ const ChangePassword = () => {
                 </div>
               </div>
 
-              <div className={`${styles.recaptchaPlaceholder} ${isVerified ? styles.verified : ''}`} onClick={handleCaptchaClick}>
-                <img src={captchaLogo} alt="captcha" className={styles.captchaLogo} />
-                {isVerifying && <div className={styles.spinner}></div>}
-                {isVerified && (
-                  <div className={styles.verifiedTick}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <path d="M20 6L9 17L4 12" stroke="#2B73EB" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                )}
-              </div>
+              <div ref={captchaRef} style={{ display: 'flex', justifyContent: 'flex-start', margin: '20px 0' }}></div>
 
               {errorMsg && <p className={styles.errorMessage}>{errorMsg}</p>}
               {successMsg && <p className={styles.successMessage}>{successMsg}</p>}

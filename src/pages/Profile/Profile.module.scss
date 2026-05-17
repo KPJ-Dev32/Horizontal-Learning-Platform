@@ -157,22 +157,42 @@
 
 .certEntry {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   margin-bottom: 25px;
+  background-color: #F8FAFC;
+  border: 1px solid #EAEAEA;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.2s ease;
+
+  &:hover {
+    transform: translateX(4px);
+    border-color: $color-teal;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  }
+}
+
+.certDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   gap: 4px;
 }
 
 .certName {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: $color-charcoal;
   margin: 0;
+  line-height: 1.4;
 }
 
 .certDateBadge {
-  font-size: 14px;
-  color: #767676;
-  font-weight: 400;
+  font-size: 13px;
+  color: $color-teal;
+  font-weight: 700;
 }
 
 @media (max-width: $breakpoint-mobile) {

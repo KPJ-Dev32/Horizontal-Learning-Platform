@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Button from '../../components/Button/Button';
 import styles from './Login.module.scss';
+import { login } from '../../utils/api';
 
 import accentBar from '../../assets/Rectangle 3 Copy 4.svg';
 import eyeIcon from '../../assets/Combined Shape Copy 3.svg';
@@ -20,20 +21,27 @@ const Login = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      setError("");
+      await login(formData.email, formData.password);
+      navigate('/home');
+    } catch (err) {
+      console.error("PostgreSQL Login failed, trying offline localStorage fallback:", err);
+      
+      const savedUsers = JSON.parse(localStorage.getItem('registered_users') || '[]');
+      const matchedUser = savedUsers.find(u => u.email?.toLowerCase().trim() === formData.email?.toLowerCase().trim() && u.password === formData.password);
 
-    const savedUsers = JSON.parse(localStorage.getItem('registered_users') || '[]');
-    const matchedUser = savedUsers.find(u => u.email === formData.email && u.password === formData.password);
-
-    if (!matchedUser) {
-      setError("You have entered invalid credentials. Please try again.");
-      return;
+      if (matchedUser) {
+        // Safe fallback for demo presentation if server is stopped
+        localStorage.setItem('user_session', JSON.stringify({ email: matchedUser.email, date: new Date() }));
+        localStorage.setItem('user_token', 'mock-token-' + matchedUser.email);
+        navigate('/home');
+      } else {
+        setError(err.message || "You have entered invalid credentials. Please try again.");
+      }
     }
-
-    setError("");
-    localStorage.setItem('user_session', JSON.stringify({ email: matchedUser.email, date: new Date() }));
-    navigate('/home');
   };
 
   return (

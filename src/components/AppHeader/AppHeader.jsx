@@ -80,6 +80,8 @@ const AppHeader = () => {
             )}
           </div>
 
+          <Link to="/growth-hub" className={`${styles.navLink} ${location.pathname === '/growth-hub' ? styles.active : ''}`}>Growth Hub</Link>
+          <Link to="/exams" className={`${styles.navLink} ${location.pathname === '/exams' ? styles.active : ''}`}>Exams</Link>
           <Link to="/contact-us" className={`${styles.navLink} ${location.pathname === '/contact-us' ? styles.active : ''}`}>Contact us</Link>
 
           <div
@@ -140,6 +142,8 @@ const AppHeader = () => {
                   <Link to="/certification" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>Certification</Link>
                   <img src={rightArrowSVG} alt=">" className={styles.mobileArrow} onClick={() => setMobileSubMenu('certification')} />
                 </div>
+                <Link to="/growth-hub" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>Growth Hub</Link>
+                <Link to="/exams" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>Exams</Link>
                 <Link to="/contact-us" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>Contact us</Link>
               </div>
               <div className={styles.mobileAccountSection}>
